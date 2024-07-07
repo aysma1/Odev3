@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hesap Makinesi</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="content">
+            <div class="panel">
+                <div class="kutu1">
+                    <input class="sayi" id="sayi1" type="number" placeholder="Sayi 1">
+                    <input class="sayi" id="sayi2" type="number" placeholder="Sayi 2">
+                </div>
+                <div class="kutu2">
+                    <button onclick="hesapla('+')" class="buton">+</button>
+                    <button onclick="hesapla('-')" class="buton">-</button>
+                    <button onclick="hesapla('*')" class="buton">*</button>
+                    <button onclick="hesapla('/')" class="buton">/</button>
+                </div>
+                <div class="kutu3">
+                    <span id="cevap" class="cevap">Cevap</span>
+                </div>
+            </div>
+        </div>
+        <script>
+            function hesapla(type){
+                var sayi1 = document.getElementById("sayi1").value;
+                var sayi2 = document.getElementById("sayi2").value;
+
+                var cevap = "";
+
+                switch(type){
+                    case "+":
+                        cevap = Number(sayi1) + Number(sayi2);  
+                        break;
+                    case "-":
+                        cevap = Number(sayi1) - Number(sayi2);
+                        break;
+                    case "*":
+                        cevap = Number(sayi1) * Number(sayi2);
+                        break;
+                    case "/":
+                        cevap = Number(sayi1) / Number(sayi2);
+                        break;
+                }
+                document.getElementById("cevap").innerHTML = cevap;
+            }
+        </script>
+    </body>
+</html>
